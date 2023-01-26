@@ -126,6 +126,7 @@ namespace CRUDEmployeeApplication
         }
         static void RemoveEmployee()
         {
+            RemoveEmp:
             Console.Write("Enter the EmployeeId of employee to remove: ");
             string employeeId = Console.ReadLine();
 
@@ -134,7 +135,7 @@ namespace CRUDEmployeeApplication
             if (employee == null)
             {
                 Console.WriteLine("Error: Employee not found.");
-                return;
+                goto RemoveEmp;
             }
 
             // Confirm removal
