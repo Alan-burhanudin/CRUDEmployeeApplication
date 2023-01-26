@@ -1,6 +1,6 @@
 
 CREATE TABLE Employee (
-    Id INT IDENTITY(10105001,1) PRIMARY KEY,
+    Id INT IDENTITY(1,1) PRIMARY KEY,
     EmployeeId VARCHAR(10) NOT NULL UNIQUE,
     FullName VARCHAR(100) NOT NULL,
     BirthDate DATE NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE Employee (
 
 
 CREATE TABLE PositionHistory (
-    Id INT IDENTITY(50000,1) PRIMARY KEY,
+    Id INT IDENTITY(1,1) PRIMARY KEY,
     PosId VARCHAR(10) NOT NULL,
     PosTitle VARCHAR(100) NOT NULL,
     EmployeeId VARCHAR(10) NOT NULL,
@@ -18,20 +18,20 @@ CREATE TABLE PositionHistory (
 );
 
 -- Insert data Employee
-INSERT INTO Employee (FullName, BirthDate, Address)
-VALUES ('Ali Anton', '1982-08-19', 'Jakarta Utara'),
-       ('Rara Siva', '1982-01-01', 'Mandalika'),
-       ('Rini Aini', '1982-02-20', 'Sumbawa Besar'),
-       ('Budi', '1982-02-22', 'Mataram Kota');
+INSERT INTO Employee (EmployeeId,FullName, BirthDate, Address)
+VALUES ('10105001','Ali Anton', '1982-08-19', 'Jakarta Utara'),
+       ('10105002','Rara Siva', '1982-01-01', 'Mandalika'),
+       ('10105003','Rini Aini', '1982-02-20', 'Sumbawa Besar'),
+       ('10105004','Budi', '1982-02-22', 'Mataram Kota');
 
 -- Insert data PositionHistory 
 INSERT INTO PositionHistory (PosId,PosTitle, EmployeeId, StartDate, EndDate)
-VALUES ('IT Manager', '10105001', '2022-01-01', '2022-02-28'),
-       ('IT Sr.Manager', '10105001',2022-03-01','2022-12-31'),
-       ('Programmer Analyst', '10105002',2022-01-01','2022-02-28'),
-       ('Sr. Programmer Analyst', '10105002',2022-03-01','2022-12-31'),
-       ('IT Admin', '10105003',2022-01-01','2022-02-28'),
-       ('IT Secretary', '10105003',2022-03-01','2022-12-31');
+VALUES ('50000','IT Manager', '10105001', '2022-01-01', '2022-02-28'),
+       ('50001','IT Sr.Manager', '10105001',2022-03-01','2022-12-31'),
+       ('50002','Programmer Analyst', '10105002',2022-01-01','2022-02-28'),
+       ('50003','Sr. Programmer Analyst', '10105002',2022-03-01','2022-12-31'),
+       ('50004','IT Admin', '10105003',2022-01-01','2022-02-28'),
+       ('50005','IT Secretary', '10105003',2022-03-01','2022-12-31');
 
 -- Display Data employee
 SELECT e.EmployeeId, e.FullName, e.BirthDate, e.Address, p.PosId, p.PosTitle, p.StartDate, p.EndDate
