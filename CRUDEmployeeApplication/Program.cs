@@ -18,7 +18,7 @@ namespace CRUDEmployeeApplication
         static List<Employee> employees = new List<Employee>();
         static void Main(string[] args)
         {
-            // Add some initial data (hardcoded for simplicity)
+            // Add some initial data 
             employees.Add(new Employee { EmployeeId = "1001", FullName = "Adit", BirthDate = new DateTime(1954, 8, 17) });
             employees.Add(new Employee { EmployeeId = "1002", FullName = "Anton", BirthDate = new DateTime(1954, 8, 18) });
             employees.Add(new Employee { EmployeeId = "1003", FullName = "Amir", BirthDate = new DateTime(1954, 8, 19) });
